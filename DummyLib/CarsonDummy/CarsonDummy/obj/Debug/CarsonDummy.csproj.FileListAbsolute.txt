@@ -1,0 +1,13 @@
+D:\003_Projekte\cah\DummyLib\CarsonDummy\CarsonDummy\bin\Debug\CarsonDummy.dll
+D:\003_Projekte\cah\DummyLib\CarsonDummy\CarsonDummy\bin\Debug\CarsonDummy.pdb
+D:\003_Projekte\cah\DummyLib\CarsonDummy\CarsonDummy\obj\Debug\CarsonDummy.csprojResolveAssemblyReference.cache
+D:\003_Projekte\cah\DummyLib\CarsonDummy\CarsonDummy\obj\Debug\CarsonDummy.dll
+D:\003_Projekte\cah\DummyLib\CarsonDummy\CarsonDummy\obj\Debug\CarsonDummy.pdb
+E:\003_Projekte\cah\DummyLib\CarsonDummy\CarsonDummy\obj\Debug\CarsonDummy.csprojResolveAssemblyReference.cache
+E:\003_Projekte\cah\DummyLib\CarsonDummy\CarsonDummy\obj\Debug\CarsonDummy.dll
+E:\003_Projekte\cah\DummyLib\CarsonDummy\CarsonDummy\bin\Debug\CarsonDummy.dll
+E:\003_Projekte\cah\DummyLib\CarsonDummy\CarsonDummy\bin\Debug\CarsonDummy.pdb
+E:\003_Projekte\cah\DummyLib\CarsonDummy\CarsonDummy\obj\Debug\CarsonDummy.pdb
+E:\003_Projekte\cah\DummyLib\CarsonDummy\CarsonDummy\bin\Debug\Newtonsoft.Json.dll
+E:\003_Projekte\cah\DummyLib\CarsonDummy\CarsonDummy\bin\Debug\Newtonsoft.Json.pdb
+E:\003_Projekte\cah\DummyLib\CarsonDummy\CarsonDummy\bin\Debug\Newtonsoft.Json.xml

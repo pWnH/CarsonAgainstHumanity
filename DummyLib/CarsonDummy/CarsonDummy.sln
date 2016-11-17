@@ -1,0 +1,24 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+# SharpDevelop 5.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarsonDummy", "CarsonDummy\CarsonDummy.csproj", "{053F7427-16FE-45FA-9B9C-433A89FC042F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testing", "Testing\Testing.csproj", "{456A4087-AE76-4408-99E2-3EB2EE644D92}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{053F7427-16FE-45FA-9B9C-433A89FC042F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{053F7427-16FE-45FA-9B9C-433A89FC042F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{053F7427-16FE-45FA-9B9C-433A89FC042F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{053F7427-16FE-45FA-9B9C-433A89FC042F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{456A4087-AE76-4408-99E2-3EB2EE644D92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{456A4087-AE76-4408-99E2-3EB2EE644D92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{456A4087-AE76-4408-99E2-3EB2EE644D92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{456A4087-AE76-4408-99E2-3EB2EE644D92}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
