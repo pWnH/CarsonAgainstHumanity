@@ -17,11 +17,12 @@ namespace CarsonDummy.Services
 	/// </summary>
 	public interface ILobbyService
 	{		
-		Guid CreateNewLobby(Guid hostId, string name);
-		bool DeleteLobby(Guid lobbyId);
-		LobbyModel ReadLobby(Guid lobbyId);
-		List<LobbyModel> ReadLobbys(List<Guid> lobbyIds);
-		bool AddToLobby(Guid lobbyId, Guid playerId);
+		LobbyModel CreateNewLobby(string hostId, string name);
+		LobbyModel CreateNewLobby(string hostId);
+		bool DeleteLobby(string lobbyId);
+		LobbyModel ReadLobby(string lobbyId);
+		List<LobbyModel> ReadLobbys(List<string> lobbyIds);
+		bool AddToLobby(string lobbyId, string clientToken);
 		
 	}
 }

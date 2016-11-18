@@ -21,7 +21,7 @@ namespace CarsonDummy
 			return JsonConvert.SerializeObject(playerModel);
 		}
 		
-		public string CreateLobby(Guid clientToken){
+		public string CreateLobby(string clientToken){
 			var tempLobby = lobbyService.CreateNewLobby(clientToken, lobbynames + counter);
 			return JsonConvert.SerializeObject(tempLobby);
 		}
@@ -30,7 +30,7 @@ namespace CarsonDummy
 			return "";
 		}
 		
-		public string JoinLobby(Guid lobbyId, Guid clientToken){
+		public string JoinLobby(string lobbyId, string clientToken){
 			var response = JsonConvert.SerializeObject(lobbyService.AddToLobby(lobbyId, clientToken));
 			
 			return response;

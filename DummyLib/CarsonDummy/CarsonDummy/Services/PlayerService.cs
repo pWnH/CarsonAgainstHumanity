@@ -8,6 +8,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Net;
 
 namespace CarsonDummy.Services
 {
@@ -16,6 +17,9 @@ namespace CarsonDummy.Services
 	/// </summary>
 	public class PlayerService : IPlayerService
 	{
+		
+		const string url = "http://cah.heretics.de/game/";
+		
 		#region IPlayerService implementation
 		
 		public static List<PlayerModel> AllPlayers = new List<PlayerModel>();
@@ -25,41 +29,46 @@ namespace CarsonDummy.Services
 
 		public PlayerModel CreatePlayer(string playerName)
 		{
-			var n = new PlayerModel(playerName, Guid.NewGuid());
-			AllPlayers.Add(n);
-			return n;
+			//Create WebRequest for API
+			var req = WebRequest.Create(string.Format("{0}authenticate?name={1}",url,playerName));
+			req.ContentType = "application/json; charset=utf-8";
+			
+			var nPlayer = (PlayerModel)ApiHelper.GetRequest<PlayerModel>(req);
+			
+			//Set the player name 
+			nPlayer.PlayerName = playerName;
+			
+			//Add to player list of service
+			AllPlayers.Add(nPlayer);
+			
+			return nPlayer;
 		}
 	
-		public PlayerModel ReadPlayer(Guid playerId)
+		public PlayerModel ReadPlayer(string clientToken)
 		{
-			return AllPlayers.Find(x => x.PlayerId == playerId);
+			return AllPlayers.Find(x => x.ClientToken == clientToken);
 		}
-	
-		public PlayerModel ReadPlayer(string playerName)
-		{
-			return AllPlayers.Find(x => x.PlayerName == playerName);
-		}
-	
-		public List<PlayerModel> GetPlayers(ICollection<Guid> playerIds)
+		
+		public List<PlayerModel> GetPlayers(ICollection<string> clientTokens)
 		{
 			var rList = new List<PlayerModel>();
-			foreach(var id in playerIds){
-				rList.Add(AllPlayers.Find(x=> x.PlayerId == id));
+			foreach(var id in clientTokens){
+				rList.Add(AllPlayers.Find(x=> x.ClientToken == id));
 			}
 			
 			return rList;
 		}
 	
-		public void UpdatePlayer(Guid playerId, string playerName, int score, bool hasPlayed)
+		public void UpdatePlayer(string clientToken, string playerName, int score, bool hasPlayed)
 		{
-			var temp = AllPlayers.Find(x => x.PlayerId == playerId);
+			var temp = AllPlayers.Find(x => x.ClientToken == clientToken);
 			if(playerName != string.Empty)
 				temp.PlayerName = playerName;
 			temp.Score = score;
 			temp.HasPlayed = hasPlayed;
 		}
 	
-		public void ReadPlayerLobby(Guid playerId)
+		public void ReadPlayerLobby(string clientToken)
 		{
 			throw new NotImplementedException();
 		}

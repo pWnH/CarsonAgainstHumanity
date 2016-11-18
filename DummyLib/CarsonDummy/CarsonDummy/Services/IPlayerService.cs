@@ -18,12 +18,11 @@ namespace CarsonDummy.Services
 	{
 		PlayerModel CreatePlayer(string playerName);
 		
-		PlayerModel ReadPlayer(Guid playerId);
-		PlayerModel ReadPlayer(string playerName);
+		PlayerModel ReadPlayer(string clientToken);
 		
-		List<PlayerModel> GetPlayers(ICollection<Guid> playerIds);
+		List<PlayerModel> GetPlayers(ICollection<string> clientTokens);
 		
-		void UpdatePlayer(Guid playerId, string playerName, int score, bool hasPlayed);
-		void ReadPlayerLobby(Guid playerId);
+		void UpdatePlayer(string clientToken, string playerName, int score, bool hasPlayed);
+		void ReadPlayerLobby(string clientToken);
 	}
 }

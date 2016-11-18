@@ -11,3 +11,6 @@ E:\003_Projekte\cah\DummyLib\CarsonDummy\CarsonDummy\obj\Debug\CarsonDummy.pdb
 E:\003_Projekte\cah\DummyLib\CarsonDummy\CarsonDummy\bin\Debug\Newtonsoft.Json.dll
 E:\003_Projekte\cah\DummyLib\CarsonDummy\CarsonDummy\bin\Debug\Newtonsoft.Json.pdb
 E:\003_Projekte\cah\DummyLib\CarsonDummy\CarsonDummy\bin\Debug\Newtonsoft.Json.xml
+D:\003_Projekte\cah\DummyLib\CarsonDummy\CarsonDummy\bin\Debug\Newtonsoft.Json.dll
+D:\003_Projekte\cah\DummyLib\CarsonDummy\CarsonDummy\bin\Debug\Newtonsoft.Json.pdb
+D:\003_Projekte\cah\DummyLib\CarsonDummy\CarsonDummy\bin\Debug\Newtonsoft.Json.xml

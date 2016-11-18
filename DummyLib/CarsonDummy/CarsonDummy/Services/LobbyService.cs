@@ -8,6 +8,8 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Net;
+using Newtonsoft.Json;
 
 namespace CarsonDummy.Services
 {
@@ -16,6 +18,9 @@ namespace CarsonDummy.Services
 	/// </summary>
 	public class LobbyService : ILobbyService
 	{
+		//API url
+		const string url = "http://cah.heretics.de/game/";
+		
 		static List<LobbyModel> AllLobbyModels = new List<LobbyModel>();
 		
 		IPlayerService playerService = PlayerService.Instance;
@@ -25,16 +30,44 @@ namespace CarsonDummy.Services
 
 		#region ILobbyService implementation
 
-		public Guid CreateNewLobby(Guid hostId, string name)
+		public LobbyModel CreateNewLobby(string hostId)
 		{
-			var temp = new LobbyModel(hostId, Guid.NewGuid());
+			var req = WebRequest.Create(string.Format("{0}create-lobby?clientToken={1}",url,hostId));
+			req.ContentType = "application/json; charset=utf-8";
 			
-			AllLobbyModels.Add(temp);
+			var nLobby = (LobbyModel)ApiHelper.GetRequest<LobbyModel>(req);
 			
-			return temp.LobbyId;
+			if(nLobby != null){
+				var host = playerService.ReadPlayer(hostId);
+				nLobby.PlayersInLobby.Add(host);
+				nLobby.HostId = host.ClientToken;
+				
+				AllLobbyModels.Add(nLobby);
+			}
+			
+			return nLobby;
+		}
+		
+		public LobbyModel CreateNewLobby(string hostId, string name)
+		{
+			var req = WebRequest.Create(string.Format("{0}create-lobby?clientToken={1}&gameName={2}",url,hostId, name));
+			req.ContentType = "application/json; charset=utf-8";
+			
+			var nLobby = (LobbyModel)ApiHelper.GetRequest<LobbyModel>(req);
+			
+			if(nLobby != null){
+				var host = playerService.ReadPlayer(hostId);
+				nLobby.PlayersInLobby.Add(host);
+				nLobby.HostId = host.ClientToken;
+				nLobby.GameName = name;
+				
+				AllLobbyModels.Add(nLobby);
+			}
+			
+			return nLobby;
 		}
 
-		public List<LobbyModel> ReadLobbys(List<Guid> lobbyIds)
+		public List<LobbyModel> ReadLobbys(List<string> lobbyIds)
 		{
 			var rLobbys = new List<LobbyModel>();
 			
@@ -45,7 +78,7 @@ namespace CarsonDummy.Services
 			return rLobbys;
 		}
 		
-		public bool DeleteLobby(Guid lobbyId)
+		public bool DeleteLobby(string lobbyId)
 		{
 			var rLobby = AllLobbyModels.Find(x => x.LobbyId == lobbyId);
 			
@@ -54,13 +87,13 @@ namespace CarsonDummy.Services
 			return AllLobbyModels.Remove(rLobby);
 		}
 		
-		public LobbyModel ReadLobby(Guid lobbyId){
+		public LobbyModel ReadLobby(string lobbyId){
 			return AllLobbyModels.Find(x => x.LobbyId == lobbyId);
 		}
 		
-		public bool AddToLobby(Guid lobbyId, Guid playerId){
+		public bool AddToLobby(string lobbyId, string clientToken){
 			var lobby = ReadLobby(lobbyId);
-			var player = playerService.ReadPlayer(playerId);
+			var player = playerService.ReadPlayer(clientToken);
 			
 			lobby.PlayersInLobby.Add(player);
 			return true;

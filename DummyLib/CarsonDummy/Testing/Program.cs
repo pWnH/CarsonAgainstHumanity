@@ -9,22 +9,26 @@
 using System;
 using CarsonDummy;
 using CarsonDummy.Services;
-using Newtonsoft.Json;
 
 namespace Testing
 {
 	class Program
 	{
+		
+		static IPlayerService playerService = PlayerService.Instance;
+		static ILobbyService lobbyService = LobbyService.Instance;
+		
+		//Testing clientToken
+		const string clientToken = "79f1913f3e1603b71bbbc6faaf4fadf9";
+		
 		public static void Main(string[] args)
 		{
-			var dummy = new DummyService();
+			var nPlayer = playerService.CreatePlayer("Player_01");
+			var nLobby = lobbyService.CreateNewLobby(nPlayer.ClientToken, "");
 			
-			var hansJson = dummy.CreatePlayer("Hans");
-			var hans = JsonConvert.DeserializeObject<PlayerModel>(hansJson);
-			
-			Console.WriteLine(hansJson);
-			Console.WriteLine("\n\n" + hans.PlayerId);
-			Console.ReadKey();
+			Console.WriteLine(string.Format("Playername: {0}\nToken: {1}",nPlayer.PlayerName,nPlayer.ClientToken));
+			Console.WriteLine(string.Format("LobbyId: {0}\nHostId = {1}",nLobby.LobbyId, nLobby.HostId));
+			Console.ReadLine();
 		}
 	}
 }

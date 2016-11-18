@@ -9,3 +9,14 @@ E:\003_Projekte\cah\DummyLib\CarsonDummy\Testing\obj\Debug\Testing.pdb
 E:\003_Projekte\cah\DummyLib\CarsonDummy\Testing\bin\Debug\Newtonsoft.Json.dll
 E:\003_Projekte\cah\DummyLib\CarsonDummy\Testing\bin\Debug\Newtonsoft.Json.pdb
 E:\003_Projekte\cah\DummyLib\CarsonDummy\Testing\bin\Debug\Newtonsoft.Json.xml
+D:\003_Projekte\cah\DummyLib\CarsonDummy\Testing\bin\Debug\Testing.exe.config
+D:\003_Projekte\cah\DummyLib\CarsonDummy\Testing\bin\Debug\Testing.exe
+D:\003_Projekte\cah\DummyLib\CarsonDummy\Testing\bin\Debug\Testing.pdb
+D:\003_Projekte\cah\DummyLib\CarsonDummy\Testing\bin\Debug\CarsonDummy.dll
+D:\003_Projekte\cah\DummyLib\CarsonDummy\Testing\bin\Debug\Newtonsoft.Json.dll
+D:\003_Projekte\cah\DummyLib\CarsonDummy\Testing\bin\Debug\CarsonDummy.pdb
+D:\003_Projekte\cah\DummyLib\CarsonDummy\Testing\bin\Debug\Newtonsoft.Json.pdb
+D:\003_Projekte\cah\DummyLib\CarsonDummy\Testing\bin\Debug\Newtonsoft.Json.xml
+D:\003_Projekte\cah\DummyLib\CarsonDummy\Testing\obj\Debug\Testing.csprojResolveAssemblyReference.cache
+D:\003_Projekte\cah\DummyLib\CarsonDummy\Testing\obj\Debug\Testing.exe
+D:\003_Projekte\cah\DummyLib\CarsonDummy\Testing\obj\Debug\Testing.pdb
